@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+    {% block navbar %}
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link" href="{{ url_for('news') }}">News</a>
+        <a class="nav-link active" aria-current="page" href="{{ url_for('register') }}">Register</a>
+        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+
+    {% endblock navbar %}
+
+    {% block content %}
+ <form action="/register" method="post">
+     {{ form.hidden_tag() }}
+      <div class="row mb-3">
+    {{ form.name.label(class="col-sm-2 col-form-label") }}
+    <div class="col-sm-6">
+     {{ form.name(class="form-control") }}
+        {% if form.name.errors %}
+          <ul class="errors" style="color:powderblue; list-style-type:none;">
+         {% for error in form.name.errors %}
+    		<li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+        {% endif %}
+    </div>
+  </div>
+  <div class="row mb-3">
+    {{ form.email.label(class="col-sm-2 col-form-label") }}
+    <div class="col-sm-6">
+      {{ form.email(class="form-control") }}
+        {% if form.email.errors %}
+          <ul class="errors" style="color:powderblue; list-style-type:none;">
+         {% for error in form.email.errors %}
+    		<li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+        {% endif %}
+    </div>
+  </div>
+  <div class="row mb-3">
+    {{ form.password.label(class="col-sm-2 col-form-label") }}
+    <div class="col-sm-6">
+     {{ form.password(class="form-control") }}
+        {% if form.password.errors %}
+          <ul class="errors" style="color:powderblue; list-style-type:none;">
+         {% for error in form.password.errors %}
+    		<li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+        {% endif %}
+    </div>
+  </div>
+      <div class="row mb-3">
+    {{ form.confirm.label(class="col-sm-2 col-form-label") }}
+    <div class="col-sm-6">
+      {{ form.confirm(class="form-control") }}
+        {% if form.confirm.errors %}
+          <ul class="errors" style="color:powderblue; list-style-type:none;">
+         {% for error in form.confirm.errors %}
+    		<li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+        {% endif %}
+    </div>
+  </div>
+      <div class="row mb-3">
+          <div class="col-sm-6">
+     {{ form.submit(class="btn btn-primary") }}
+              </div>
+      </div>
+</form>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+    {% block navbar %}
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link active" aria-current="page" href="{{ url_for('news') }}">News</a>
+        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+    {% endblock navbar %}
+    {% block content %}
+
+   <br>
+  <div class="dropdown">
+  <button class="btn btn-lg btn-secondary fw-bold border-white bg-white dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose your news
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="{{ url_for('progress') }}">Middle East</a></li>
+    <li><a class="dropdown-item" href="{{ url_for('progress2') }}">Main news in brief</a></li>
+  </ul>
+</div>
+    {% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+    {% block navbar %}
+        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link" href="{{ url_for('news') }}">News</a>
+        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+    {% endblock navbar %}
+    {% block content %}
+     <h4>Read and listen to the latest news from hot spots all over the world</h4>
+     <br>
+    <p class="lead">
+      <a href="{{ url_for('news') }}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Listen to the News</a>
+    </p>
+    {% endblock %}
