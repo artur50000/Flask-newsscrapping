@@ -37,7 +37,6 @@ pycparser==2.20
 pyparsing==2.4.7
 pypiwin32==223
 pyttsx3==2.90
-pywin32==300
 PyYAML==5.3.1
 requests==2.25.1
 six==1.15.0
