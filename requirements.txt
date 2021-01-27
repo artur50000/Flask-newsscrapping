@@ -35,7 +35,6 @@ psycopg2==2.8.6
 py==1.10.0
 pycparser==2.20
 pyparsing==2.4.7
-pypiwin32==223
 pyttsx3==2.90
 PyYAML==5.3.1
 requests==2.25.1
